@@ -7,13 +7,14 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.codelogger.web.controller.BaseController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.codelogger.web.context.stereotype.Controller;
+import org.codelogger.web.context.stereotype.RequestMapping;
+import org.codelogger.web.context.stereotype.ResponseBody;
 
-@RestController
-@RequestMapping(value = "request", produces = "application/json")
-public class RequestController extends BaseController {
+@Controller
+@RequestMapping(value = "request")
+@ResponseBody
+public class RequestController {
 
   @RequestMapping(value = "headers")
   public Object getHeaders(final HttpServletRequest request) {
